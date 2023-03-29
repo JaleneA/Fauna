@@ -1,0 +1,31 @@
+{
+  "name": "proj1601",
+  "version": "0.0.1",
+  "description": "A social media for pets",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github/com/JaleneA/proj1601"
+  },
+  "keywords": [
+    "pets",
+    "pet",
+    "social_media",
+    "online",
+    "website"
+  ],
+  "author": "Jalene Armstrong",
+  "contributors": [
+    "Keziah Allyene",
+    "Renaldo Walker",
+    "V. (Skyler Almarales)"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "path": "^0.12.7"
+  }
+}

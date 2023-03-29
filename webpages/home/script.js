@@ -1,0 +1,1 @@
+// JS script specific to the homepage
