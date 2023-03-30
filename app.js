@@ -12,21 +12,42 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-const port = process.env.PORT || 8080;
-// 8080 and 3000 are typically used as development ports.
 
-// First argument of .get() is the page route, second is a callback
-// function that takes in a request ("req") and gives a response ("res").
+// Set the port that will host the web app
+// 8080 and 3000 are typically used as development ports.
+const port = process.env.PORT || 8080;
+
+// Set view engine to ejs (essentially HTML, but with "Embedded JavaScript")
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+
+
+// Index (Home) page
 app.get("/", function (req, res) {
+    // First argument of .get() is the page route, second is a callback
+    // function that takes in a request ("req") and gives a response ("res").
+    
     // sendFile() allows us to load a full .html file like normal
-    res.sendFile(path.join(__dirname, "webpages/home/index.html"));
-})
+    res.render("pages/homepage");
+    
+});
+
 
 app.get("/login", function (req, res) {
-    // By comparison, send() inserts whatever we put directly into the
-    // <body> tags of a blank page
-    res.send("Welcome to the Fauna login page!");
-})
+    res.render("pages/login");
+});
 
-app.listen(port);
-console.log("Server started at http://localhost:" + port);
+
+app.get("/user/:userName", function (req, res) {
+    const userName = req.params.userName;
+
+    res.render("pages/userpage", {
+        username: userName,
+    });
+});
+
+
+// Open web server at selected port
+app.listen(port, function () {
+    console.log("Server started at http://localhost:" + port);
+});
