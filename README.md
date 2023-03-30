@@ -2,4 +2,4 @@
 
 INFO1601 Project Github Repository.
 
-Uses Node Package Manager (NPM) and Node.js
+Utelizes Node.js for the backend, with EJS templates to create dynamic pages
